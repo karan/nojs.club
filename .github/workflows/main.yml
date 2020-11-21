@@ -45,11 +45,13 @@ jobs:
               if [ -z "$js_out" ]; then
                 echo ::set-output name=comment::"URL is valid and no javascript found, will update the website shortly."
               else
-                body='URL is valid, but Javascript was found:\n\n```$js_out```'
+                body="URL is valid, but Javascript was found:\n
+                \`\`\`$js_out\`\`\`"
                 body="${body//'%'/'%25'}"
                 body="${body//$'\n'/'%0A'}"
                 body="${body//$'\r'/'%0D'}"
                 echo ::set-output name=comment::$body
+                exit 1
               fi
 
             fi
