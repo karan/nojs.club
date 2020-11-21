@@ -4,7 +4,7 @@ name: nojs-verify
 on:
   # Triggers the workflow on push or pull request events but only for the main branch
   issues:
-    types: [opened]
+    types: [opened, edited, reopened]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -45,7 +45,7 @@ jobs:
               if [ -z "$js_out" ]; then
                 echo ::set-output name=comment::"URL is valid and no javascript found, will update the website shortly."
               else
-                body=URL is valid, but Javascript was found:\n\n```$js_out```
+                body='URL is valid, but Javascript was found:\n\n```$js_out```'
                 body="${body//'%'/'%25'}"
                 body="${body//$'\n'/'%0A'}"
                 body="${body//$'\r'/'%0D'}"
