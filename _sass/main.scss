@@ -1,0 +1,61 @@
+$backgroundColor: #ffffff;
+$bodyColor: #000000;
+
+body {
+  background: $backgroundColor;
+  color: $bodyColor;
+  font: 18px/1.5 "Helvetica", "Arial", sans-serif;
+  margin: 0 auto;
+  max-width: 700px;
+  width: 100%;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+a,a:visited {
+    color: currentColor;
+}
+a:hover,a:focus {
+    color: blue;
+}
+
+ul {
+    list-style: none;
+    margin: 3rem 0 0 0;
+    padding: 0;
+}
+ul li {
+    background: rgba(0,0,0,0.05);
+    line-height: 1;
+    margin: 0 0 0.5rem 0;
+    padding: 15px 10px 12px;
+    position: relative;
+}
+ul li span.before,
+ul li span.after {
+    left: 0;
+    position: absolute;
+    top: 0;
+}
+ul li span.after {
+    left: auto;
+    opacity: 0.6;
+    right: 10px;
+    top: auto;
+}
+ul li a {
+    font-weight: bold;
+    position: relative;
+    z-index: 2;
+}
+
+footer {
+    border-top: 1px solid lightgrey;
+    margin: 3rem auto 0;
+    padding: 0.5rem 0 0;
+}
+footer p {
+    font-size: 85%;
+}

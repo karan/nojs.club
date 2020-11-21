@@ -1,0 +1,34 @@
+I"8<h2 id="nojsclub">noJS.club</h2>
+
+<p>You don’t need Javascript to make a beautiful, usable web.</p>
+
+<p>Javascript bloats the websites, enables surveillance, hinders accessibility, and hogs system resources.</p>
+
+<p>You can add your website to the list below as long as it uses no javascript. Just <a href="https://github.com/karan/nojs.club/issues">open an issue</a> with the domain in the title.</p>
+
+<ul class="members">
+
+
+  <li>
+    <a href="https://cyberia.host" target="_blank">
+      cyberia.host
+    </a>
+    <span class="after">1.99 kB</span>
+  </li>
+
+  <li>
+    <a href="https://goel.io" target="_blank">
+      goel.io
+    </a>
+    <span class="after">18.972 kB</span>
+  </li>
+
+  <li>
+    <a href="https://two.host" target="_blank">
+      two.host
+    </a>
+    <span class="after">19.99 kB</span>
+  </li>
+
+</ul>
+:ET

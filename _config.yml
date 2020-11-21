@@ -1,0 +1,3 @@
+url: "https://nojs.club" # the base hostname & protocol for your site, e.g. http://example.com
+baseurl: "" # the subpath of your site, e.g. /blog
+title: "noJS.club" # the name of your site, e.g. ACME Corp.
