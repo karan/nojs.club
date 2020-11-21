@@ -4,7 +4,7 @@ name: nojs-verify
 on:
   # Triggers the workflow on push or pull request events but only for the main branch
   issues:
-    types: [opened, edited, reopened]
+    types: [opened]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -41,10 +41,20 @@ jobs:
                 echo ::set-output name=comment::"$domain already exists in data."
                 exit 1
             else
-                echo ::set-output name=comment::"URL is valid, will update the website shortly."
+              js_out=$(curl -sSL $domain | grep -F '<script')
+              if [ -z "$js_out" ]; then
+                echo ::set-output name=comment::"URL is valid and no javascript found, will update the website shortly."
+              else
+                body=URL is valid, but Javascript was found:\n\n```$js_out```
+                body="${body//'%'/'%25'}"
+                body="${body//$'\n'/'%0A'}"
+                body="${body//$'\r'/'%0D'}"
+                echo ::set-output name=comment::$body
+              fi
+
             fi
           else
-              echo ::set-output name=comment::"URL is invalid, edit and update issue to a valid URL."
+              echo ::set-output name=comment::"URL is invalid, create a new issue with a valid URL in title (eg: `https://example.com`)."
               exit 1
           fi
 
@@ -93,7 +103,7 @@ jobs:
 
       - uses: stefanzweifel/git-auto-commit-action@v4
         with:
-          commit_message: add ${{ steps.get-size.outputs.domain }}
+          commit_message: "add ${{ steps.get-size.outputs.domain }}, #${{ env.ISSUE_NUM }}"
 
       - name: Close Issue
         uses: peter-evans/close-issue@v1
