@@ -1,13 +1,6 @@
----
-layout: default
-title: "noJS.club!"
----
+# noJS.club
 
-## noJS.club
-
-Not all websites need Javascript to be beautiful and usable. This is a showcase of the Javascript-less web.
-
-**Why**
+You don't need Javascript to make a beautiful, usable web.
 
 Javascript bloats websites, hogs system resources, enables surveillance, hinders accessibility, and introduces vulnerabilities.
 
@@ -20,13 +13,13 @@ You can add your website to the list below as long as it uses no Javascript.
 3. If your site satisfies this requirement, [submit an issue](https://github.com/karan/nojs.club/issues/new?assignees=&labels=&template=nojsrequest.md&title=example.com) on GitHub.
 4. Once the request is approved, the domain will be added to the list below.
 
-<ul class="members">
-{% assign ordered_items = site.data.sites | sort: 'size' %}
-{% for member in ordered_items %}
-  <li>
-    <a href="https://{{ member.domain }}" target="_blank">
-      {{ member.domain }}</a>
-    <span class="after">{{ member.size | truncate: 4, "" }} kB</span>
-  </li>
-{% endfor %}
-</ul>
+## How it works
+
+This repo uses Github Actions to automate adding a site to the data list.
+
+* When issue opened (or edited or reopened), the action parses domain, gets `script` tags and comments with it.
+* When I (`karan`) comment in a specific format (`/approve domain 123.45`), the action will add the site to the data and close the issue.
+
+The website is served using Jekyll.
+
+Based on the [1MB Club](https://1mb.club)
