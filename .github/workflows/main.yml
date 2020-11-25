@@ -49,6 +49,13 @@ jobs:
           else
             echo "$DOMAIN not found in data.. Attempting to get page content."
 
+            echo "run just the command"
+            curl --silent --show-error $DOMAIN
+
+            echo "grep for script"
+            curl --silent --show-error $DOMAIN | grep -F '<script'
+
+            echo "assign grepd out to var"
             js_out=$(curl --silent --show-error $DOMAIN | grep -F '<script')
             echo "js snippet found: $js_out"
 
@@ -108,4 +115,4 @@ jobs:
         with:
           issue-number: ${{ env.ISSUE_NUM }}
           token: ${{ secrets.GITHUB_TOKEN }}
-          comment: Domain added to data. Will be live on https://nojs.club soon.
+          comment: Domain added to data. Will be live on https://nojs.club in about five minutes.
