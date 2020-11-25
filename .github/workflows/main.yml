@@ -48,9 +48,8 @@ jobs:
             echo ::set-output name=comment::"Thank you for your contribution but $DOMAIN already exists in data."
           else
             echo "$DOMAIN not found in data.. Attempting to get page content."
-            curl -v --show-error --fail SL $DOMAIN
 
-            js_out=$(curl --show-error --fail -SL $DOMAIN | grep -F '<script')
+            js_out=$(curl --silent --show-error $DOMAIN | grep -F '<script')
             echo "js snippet found: $js_out"
 
             body="Javascript found on $DOMAIN:
