@@ -7,7 +7,7 @@ body {
   font: 18px/1.5 "Helvetica", sans-serif;
   margin: 0 auto;
   max-width: 600px;
-  width: 100%;
+  width: 80%;
 }
 
 * {
@@ -38,6 +38,13 @@ ul li span.after {
     left: 0;
     position: absolute;
     top: 0;
+}
+ul li span.before {
+    background: lightgrey;
+    height: 100%;
+    width: calc(var(--data-size)/512 * 100%);
+    border-radius: 4px;
+    z-index: 0;
 }
 ul li span.after {
     left: auto;
