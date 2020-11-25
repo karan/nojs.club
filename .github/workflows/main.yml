@@ -44,9 +44,12 @@ jobs:
           echo "Issue #$ISSUE_NUM, candidate $DOMAIN"
 
           if grep -Fq "$DOMAIN," _data/sites.csv; then
-              echo ::set-output name=comment::"Thank you for your contribution but $DOMAIN already exists in data."
+            echo "$DOMAIN found in sites already"
+            echo ::set-output name=comment::"Thank you for your contribution but $DOMAIN already exists in data."
           else
             js_out=$(curl -sSL $DOMAIN | grep -F '<script')
+            echo "js snippet found: $js_out"
+
             body="Javascript found on $DOMAIN:
 
             \`\`\`$js_out\`\`\`"
@@ -54,6 +57,8 @@ jobs:
             body="${body//'%'/'%25'}"
             body="${body//$'\n'/'%0A'}"
             body="${body//$'\r'/'%0D'}"
+
+            echo "Comment body: $body"
             echo ::set-output name=comment::$body
           fi
 
