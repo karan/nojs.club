@@ -37,7 +37,7 @@ jobs:
           flags: 'mg'
 
       - id: get-scripts
-        shell: bash
+        shell: bash {0}
         env:
           DOMAIN: ${{ steps.domain-match.outputs.group1 }}
         run: |
@@ -48,14 +48,6 @@ jobs:
             echo ::set-output name=comment::"Thank you for your contribution but $DOMAIN already exists in data."
           else
             echo "$DOMAIN not found in data.. Attempting to get page content."
-
-            echo "run just the command"
-            curl --silent --show-error $DOMAIN
-
-            echo "grep for script"
-            curl --silent --show-error $DOMAIN | grep -F '<script'
-
-            echo "assign grepd out to var"
             js_out=$(curl --silent --show-error $DOMAIN | grep -F '<script')
             echo "js snippet found: $js_out"
 
