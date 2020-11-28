@@ -42,7 +42,7 @@ ul li span.after {
 ul li span.before {
     background: lightgrey;
     height: 100%;
-    width: calc(var(--data-size)/512 * 100%);
+    width: calc(var(--data-size)/1010 * 100%);
     border-radius: 4px;
     z-index: 0;
 }
