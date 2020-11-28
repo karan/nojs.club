@@ -48,16 +48,19 @@ jobs:
             echo ::set-output name=comment::"Thank you for your contribution but $DOMAIN already exists in data."
           else
             echo "$DOMAIN not found in data.. Attempting to get page content."
-            js_out=$(curl --silent --show-error $DOMAIN | grep -F '<script')
+            js_out=$(curl --silent --show-error -L $DOMAIN | grep -F '<script')
             echo "js snippet found: $js_out"
+            if [ -z $js_out ]; then
+              body="No Javascript found on $DOMAIN"
+            else
+              body="Javascript found on $DOMAIN:
 
-            body="Javascript found on $DOMAIN:
+              \`\`\`$js_out\`\`\`"
 
-            \`\`\`$js_out\`\`\`"
-
-            body="${body//'%'/'%25'}"
-            body="${body//$'\n'/'%0A'}"
-            body="${body//$'\r'/'%0D'}"
+              body="${body//'%'/'%25'}"
+              body="${body//$'\n'/'%0A'}"
+              body="${body//$'\r'/'%0D'}"
+            fi
 
             echo "Comment body: $body"
             echo ::set-output name=comment::$body
