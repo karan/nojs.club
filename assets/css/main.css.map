@@ -1,0 +1,14 @@
+{
+	"version": 3,
+	"file": "main.css",
+	"sources": [
+		"main.scss",
+		"_sass/main.scss"
+	],
+	"sourcesContent": [
+		"@import \"main\";\n",
+		"$backgroundColor: #ffffff;\n$bodyColor: #000000;\n\nbody {\n  background: $backgroundColor;\n  color: $bodyColor;\n  font: 18px/1.5 \"Helvetica\", sans-serif;\n  margin: 0 auto;\n  max-width: 800px;\n  width: 90%;\n}\n\n* {\n    box-sizing: border-box;\n}\n\na,a:visited {\n    color: currentColor;\n}\na:hover,a:focus {\n    color: blue;\n}\n\nul {\n    list-style: none;\n    margin: 3rem 0 0 0;\n    padding: 0;\n}\nul li {\n    border-bottom: 1px solid #F0F0F0;\n    line-height: 1;\n    margin: 0 0 0.5rem 0;\n    padding: 15px 10px 12px;\n    position: relative;\n}\nul li span.before,\nul li span.after {\n    left: 0;\n    position: absolute;\n    top: 0;\n}\nul li span.before {\n    background: lightgrey;\n    height: 100%;\n    width: calc(var(--data-size)/3540 * 100%);\n    border-radius: 4px;\n    z-index: 0;\n}\nul li span.after {\n    left: auto;\n    opacity: 0.6;\n    right: 10px;\n    top: auto;\n}\nul li a {\n    font-weight: bold;\n    position: relative;\n    z-index: 2;\n}\n\nfooter {\n    border-top: 1px solid lightgrey;\n    margin: 3rem auto 0;\n    padding: 0.5rem 0 0;\n}\nfooter p {\n    font-size: 85%;\n}\n"
+	],
+	"names": [],
+	"mappings": "ACGA,AAAA,IAAI,CAAC,EACH,UAAU,EAJM,OAAO,EAKvB,KAAK,EAJK,OAAO,EAKjB,IAAI,EAAE,gCAAgC,EACtC,MAAM,EAAE,MAAM,EACd,SAAS,EAAE,KAAK,EAChB,KAAK,EAAE,GAAG,GACX;;AAED,AAAA,CAAC,CAAC,EACE,UAAU,EAAE,UAAU,GACzB;;AAED,AAAA,CAAC,EAAC,CAAC,CAAC,OAAO,CAAC,EACR,KAAK,EAAE,YAAY,GACtB;;AACD,AAAA,CAAC,CAAC,KAAK,EAAC,CAAC,CAAC,KAAK,CAAC,EACZ,KAAK,EAAE,IAAI,GACd;;AAED,AAAA,EAAE,CAAC,EACC,UAAU,EAAE,IAAI,EAChB,MAAM,EAAE,UAAU,EAClB,OAAO,EAAE,CAAC,GACb;;AACD,AAAA,EAAE,CAAC,EAAE,CAAC,EACF,aAAa,EAAE,iBAAiB,EAChC,WAAW,EAAE,CAAC,EACd,MAAM,EAAE,YAAY,EACpB,OAAO,EAAE,cAAc,EACvB,QAAQ,EAAE,QAAQ,GACrB;;AACD,AAAA,EAAE,CAAC,EAAE,CAAC,IAAI,AAAA,OAAO,EACjB,EAAE,CAAC,EAAE,CAAC,IAAI,AAAA,MAAM,CAAC,EACb,IAAI,EAAE,CAAC,EACP,QAAQ,EAAE,QAAQ,EAClB,GAAG,EAAE,CAAC,GACT;;AACD,AAAA,EAAE,CAAC,EAAE,CAAC,IAAI,AAAA,OAAO,CAAC,EACd,UAAU,EAAE,SAAS,EACrB,MAAM,EAAE,IAAI,EACZ,KAAK,EAAE,kCAAkC,EACzC,aAAa,EAAE,GAAG,EAClB,OAAO,EAAE,CAAC,GACb;;AACD,AAAA,EAAE,CAAC,EAAE,CAAC,IAAI,AAAA,MAAM,CAAC,EACb,IAAI,EAAE,IAAI,EACV,OAAO,EAAE,GAAG,EACZ,KAAK,EAAE,IAAI,EACX,GAAG,EAAE,IAAI,GACZ;;AACD,AAAA,EAAE,CAAC,EAAE,CAAC,CAAC,CAAC,EACJ,WAAW,EAAE,IAAI,EACjB,QAAQ,EAAE,QAAQ,EAClB,OAAO,EAAE,CAAC,GACb;;AAED,AAAA,MAAM,CAAC,EACH,UAAU,EAAE,mBAAmB,EAC/B,MAAM,EAAE,WAAW,EACnB,OAAO,EAAE,UAAU,GACtB;;AACD,AAAA,MAAM,CAAC,CAAC,CAAC,EACL,SAAS,EAAE,GAAG,GACjB"
+}
